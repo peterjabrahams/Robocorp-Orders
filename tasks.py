@@ -5,7 +5,6 @@ from RPA.Tables import Tables
 from RPA.PDF import PDF
 from RPA.Archive import Archive
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
-#from RPA.Assistant import Assistant
 
 @task
 def order_robots_from_robotSpareBin():
@@ -22,9 +21,11 @@ def order_robots_from_robotSpareBin():
     download_csv_file()
     read_orders_csv()
 
-def open_robot_order_website():
-    browser.goto('https://robotsparebinindustries.com/#/robot-order')
- 
+def open_robot_order_website(url):
+    browser.goto(url)
+    download_csv_file()
+    read_orders_csv()
+   
 def download_csv_file():
     """download the csv orders data from provided URL"""
     http = HTTP()
