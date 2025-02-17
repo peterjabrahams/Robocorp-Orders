@@ -21,8 +21,8 @@ def order_robots_from_robotSpareBin():
     download_csv_file()
     read_orders_csv()
 
-def open_robot_order_website(url):
-    browser.goto(url)
+def open_robot_order_website():
+    browser.goto('https://robotsparebinindustries.com/#/robot-order')
     download_csv_file()
     read_orders_csv()
    
